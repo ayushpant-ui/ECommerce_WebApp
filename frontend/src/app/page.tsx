@@ -1,7 +1,7 @@
 import Image from "next/image";
-
+import Hero from '@/components/Home';
 export default function Home() {
   return (
-    <h1>hlo</h1>
+    <Hero />
   );
 }
