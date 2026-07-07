@@ -10,6 +10,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import SearchBar from "./Searchbar";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -62,10 +63,10 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
 
           <motion.div
-            whileHover={{ scale: 1.15 }}
-            whileTap={{ scale: 0.9 }}
+            // whileHover={{ scale: 1 }}
+            // whileTap={{ scale: 1 }}
           >
-            <Search className="cursor-pointer" size={22} />
+            <SearchBar />
           </motion.div>
 
           <motion.div
