@@ -89,7 +89,9 @@ const Navbar = () => {
             whileTap={{ scale: 0.9 }}
             className="hidden md:block"
           >
+          <Link href='/login'>
             <User className="cursor-pointer" size={22} />
+          </Link>
           </motion.div>
 
           {/* Mobile Button */}

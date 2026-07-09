@@ -63,7 +63,7 @@ export default function CategorySidebar() {
 
       <button
         onClick={() => setOpen(true)}
-        className="fixed left-5 top-20 z-50 rounded-lg border bg-white p-2 shadow md:hidden"
+        className="fixed right-5 top-20 z-50 rounded-lg border bg-white p-2 shadow md:hidden"
       >
         <Menu />
       </button>
