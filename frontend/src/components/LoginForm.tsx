@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { useState } from "react";
@@ -83,7 +83,9 @@ export default function LoginForm() {
             type="button"
             className="text-blue-600"
           >
+          <Link href="/register">
             Register
+          </Link>
           </button>
 
         </div>
