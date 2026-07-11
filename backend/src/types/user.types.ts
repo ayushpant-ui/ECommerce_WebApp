@@ -4,7 +4,7 @@ export interface CreateUserDTO {
     email : string , 
     password : string , 
     phone : string ,
-}
+};
 export interface User {
     id : number ,
     firstname : string , 
@@ -12,4 +12,4 @@ export interface User {
     email : string ,
     password : string,
     phone : string , 
-}
+};

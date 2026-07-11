@@ -13,3 +13,5 @@ const pool = mysql.createpool({
     connectionLimit : 10,
     queueLimit : 0,
 })
+
+export default pool ;
