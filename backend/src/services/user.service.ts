@@ -8,5 +8,6 @@ export async function registerUser(user:CreateUserDTO){
     if (existingUser.length>0){
         throw Error("Email already Exist");
     }
+    else 
     return await userRepository.createUser(user);
 }
