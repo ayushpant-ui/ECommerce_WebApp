@@ -11,6 +11,23 @@ import {
   MapPin,
   Send,
 } from "lucide-react";
+const icon =[{
+  icon_name: <FaFacebook size={22}/>,
+  href : '#'
+},
+{
+  icon_name: <FaInstagram size={22}/>,
+  href: '#'
+},
+{
+  icon_name: <FaGithub size={22}/>,
+  href: 'https://github.com/ayushpant-ui'
+},
+{
+  icon_name: <FaLinkedin size={22}/>,
+  href:'#'
+}
+]
 
 export default function ContactSection() {
   return (
@@ -64,7 +81,7 @@ export default function ContactSection() {
                 </h3>
 
                 <p className="text-gray-500">
-                  support@shopverse.com
+                  ayushpant2073@gmail.com
                 </p>
               </div>
 
@@ -80,7 +97,7 @@ export default function ContactSection() {
                 </h3>
 
                 <p className="text-gray-500">
-                  +977-98XXXXXXXX
+                  +977-9766987980
                 </p>
               </div>
 
@@ -96,7 +113,7 @@ export default function ContactSection() {
                 </h3>
 
                 <p className="text-gray-500">
-                  Kathmandu, Nepal
+                  Mahendranagar, Nepal
                 </p>
               </div>
 
@@ -106,7 +123,7 @@ export default function ContactSection() {
 
             <div className="flex gap-5 pt-4">
 
-              {[FaFacebook, FaInstagram, FaGithub, FaLinkedin].map((Icon, index) => (
+              {icon.map((value, index) => (
 
                 <motion.div
                   key={index}
@@ -114,7 +131,11 @@ export default function ContactSection() {
                   whileTap={{ scale: .9 }}
                   className="cursor-pointer rounded-full border bg-white p-4 shadow"
                 >
-                  <Icon size={22} />
+                  <a href={value.href}
+                  target="_blank">
+
+                  {value.icon_name}
+                  </a>
                 </motion.div>
 
               ))}
