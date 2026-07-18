@@ -5,4 +5,4 @@ export async function registerUser(data: RegisterSchema) {
   const response = await api.post("/users/register", data);
 
   return response.data;
-}
+} 
