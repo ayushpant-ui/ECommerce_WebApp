@@ -4,6 +4,7 @@ import RegisterForm from "@/components/RegisterForm";
 import { motion } from "framer-motion";
 
 export default function RegisterPage() {
+
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-100 px-6 py-12">
 
