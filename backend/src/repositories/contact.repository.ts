@@ -2,6 +2,7 @@ import pool from '../config/db.js'
 import type {Contact} from '../types/contact.types.js'
 
 async function ConctactRepo(user:Contact){
+    
     const mysql = `INSERT INTO Contact
     (firstname,lastname,email,subject,message)
     values(?,?,?,?,?)`;

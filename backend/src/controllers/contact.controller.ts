@@ -16,10 +16,8 @@ catch(error){
     res.status(500).json({
         success: false , 
         message:'Something Went Wrong',
-
     })
 }
-
 
 }
 export default CreateContact

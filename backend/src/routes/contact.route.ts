@@ -1,6 +1,6 @@
 import express from 'express'
-import ContactHandle from '../controllers/contact.controller.js'
+import CreateContact from '../controllers/contact.controller.js'
 const route = express.Router()
 
-route.post('/contact',ContactHandle)
+route.post('/',CreateContact)
 export default route 
