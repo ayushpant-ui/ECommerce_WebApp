@@ -3,13 +3,13 @@ import type {Contact} from '../types/contact.types.js'
 
 async function ConctactRepo(user:Contact){
     
-    const mysql = `INSERT INTO Contact
-    (firstname,lastname,email,subject,message)
+    const mysql = `INSERT INTO contacts
+    (first_name,last_name,email,subject,message)
     values(?,?,?,?,?)`;
 
     const [result] = await pool.execute(mysql,[
-        user.firstName,
-        user.lastName,
+        user.firstname,
+        user.lastname,
         user.email,
         user.subject,
         user.message
