@@ -183,12 +183,14 @@ const {
                 type="text"
                 placeholder="First Name"
                 className="rounded-xl border px-5 py-4 outline-none transition focus:border-black"
+                {...register("firstName")}
               />
 
               <input
                 type="text"
                 placeholder="Last Name"
                 className="rounded-xl border px-5 py-4 outline-none transition focus:border-black"
+                {...register("lastName")}
               />
 
             </div>
@@ -197,21 +199,25 @@ const {
               type="email"
               placeholder="Email Address"
               className="mt-6 w-full rounded-xl border px-5 py-4 outline-none transition focus:border-black"
+              {...register("email")}
             />
 
             <input
               type="text"
               placeholder="Subject"
               className="mt-6 w-full rounded-xl border px-5 py-4 outline-none transition focus:border-black"
+              {...register("subject")}
             />
 
             <textarea
               rows={6}
               placeholder="Write your message..."
               className="mt-6 w-full resize-none rounded-xl border px-5 py-4 outline-none transition focus:border-black"
+              {...register("message")}
             />
 
             <motion.button
+              type="submit"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: .95 }}
               className="mt-8 flex w-full items-center justify-center gap-3 rounded-xl bg-black py-4 font-semibold text-white"

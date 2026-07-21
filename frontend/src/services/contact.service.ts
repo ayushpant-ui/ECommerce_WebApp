@@ -9,7 +9,7 @@ export interface ContactFormData {
 export async function sendContactMessage(data: ContactFormData) {
   console.log(process.env.NEXT_PUBLIC_BACKEND_URL);
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contacts`,
+    `http://localhost:8000/api/contacts`,
     {
       method: "POST",
 
@@ -21,12 +21,14 @@ export async function sendContactMessage(data: ContactFormData) {
     }
   );
 
-  const result = await response.json();
+const result = await response.json();
 
-  if (!response.ok) {
-    throw new Error(result.message);
-  }
+console.log("STATUS:", response.status);
+console.log("RESULT:", result);
 
+if (!response.ok) {
+  throw new Error(result.message);
+}
   return result;
 }
 
