@@ -8,8 +8,8 @@ async function ConctactRepo(user:Contact){
     values(?,?,?,?,?)`;
 
     const [result] = await pool.execute(mysql,[
-        user.firstname,
-        user.lastname,
+        user.firstName,
+        user.lastName,
         user.email,
         user.subject,
         user.message

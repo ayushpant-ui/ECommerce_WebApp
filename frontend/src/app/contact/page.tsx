@@ -1,5 +1,5 @@
 "use client";
-
+import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
@@ -28,8 +28,29 @@ const icon =[{
   href:'#'
 }
 ]
+import {sendContactMessage } from "@/services/contact.service";
+import { ContactFormData } from "@/services/contact.service";
+export async function onSubmit(data: ContactFormData) {
+  try {
+    const result = await sendContactMessage(data);
+
+    console.log(result);
+
+    alert("Message Sent Successfully");
+  } catch (error) {
+    console.error(error);
+
+    alert("Failed to send message");
+  }
+}
 
 export default function ContactSection() {
+const {
+  register,
+  handleSubmit,
+  formState: { errors },
+} = useForm<ContactFormData>();
+
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-slate-50 via-white to-blue-100 py-24">
 
@@ -152,7 +173,9 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: .7 }}
             className="rounded-3xl border border-white/40 bg-white/80 p-8 shadow-2xl backdrop-blur-xl"
-          >
+            onSubmit={handleSubmit(onSubmit)}
+            >
+    
 
             <div className="grid gap-6 md:grid-cols-2">
 

@@ -48,7 +48,7 @@ export default function GoogleButton({
       "
     >
       <Image
-        src='/google.svg'
+        src='/images/google.svg'
         alt="Google"
         width={22}
         height={22}
