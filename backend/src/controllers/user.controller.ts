@@ -1,23 +1,24 @@
 import type { Request,Response } from 'express';
-import * as UserRegister from '../services/user.service.js'
-const UserPost = async (req: Request, res: Response) => {
-    try
-    {
-        const user:any = req.body ; 
-        const result = await UserRegister.registerUser(user);
+import {CreateUser} from '../services/user.service.js'
+export async function RegisterUser(
+  req: Request,
+  res: Response
+) {
+  try {
+    const result = await CreateUser(req.body);
 
-        res.status(201).json({
-            success: true,
-            message :'User Registered',
-            data : result 
-        });
-    }
-    catch(error:any)
-    {
-        res.status(400).json({
-            success:false,
-            message: error.message
-        })
-    }
+    res.status(201).json({
+      success: true,
+      message: "User Registered Successfully",
+      data: result,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      message: "Registration Failed",
+      error
+    });
+  }
 }
-export default UserPost;

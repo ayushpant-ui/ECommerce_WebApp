@@ -1,13 +1,18 @@
-import * as userRepository from '../repositories/user.repository.js'
-import type {CreateUserDTO}  from '../types/user.types.js'
+import bcrypt from "bcrypt";
+import { createUserRepo } from "../repositories/user.repository.js";
+import type{ CreateUserDTO } from "../types/user.types.js";
 
-export async function registerUser(user:CreateUserDTO){
+export async function CreateUser(user: CreateUserDTO) {
+  console.log(user);
+  const hashedPassword = await bcrypt.hash(
+    user.password,
+    10
+  );
 
-    const existingUser = await userRepository.findUserByEmail(user.email);
+  const result = await createUserRepo({
+    ...user,
+    password: hashedPassword,
+  });
 
-    if (existingUser.length>0){
-        throw Error("Email already Exist");
-    }
-    else 
-    return await userRepository.createUser(user);
+  return result;
 }

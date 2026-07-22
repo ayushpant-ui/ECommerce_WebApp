@@ -17,7 +17,7 @@ import {
   RegisterSchema,
 } from "../schemas/auth.schema";
 
-import { registerUser } from "../services/auth.services";
+import { registerUser } from "@/services/auth.service";
 
 
 export default function RegisterForm() {
@@ -46,6 +46,7 @@ export default function RegisterForm() {
 
   async function onSubmit(data: RegisterSchema) {
     try {
+      const { confirmPassword, ...userData } = data;
       const response = await registerUser(data);
 
       console.log(response);
