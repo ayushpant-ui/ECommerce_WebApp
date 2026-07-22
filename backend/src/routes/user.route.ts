@@ -1,5 +1,5 @@
 import express from 'express';
 import UserPost from '../controllers/user.controller.js';
 const router = express.Router();
-router.post('/register', UserPost);
+router.post('/', UserPost);
 export default router;

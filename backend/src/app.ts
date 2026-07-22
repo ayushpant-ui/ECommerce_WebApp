@@ -3,8 +3,6 @@ import userRoutes from './routes/user.route.js'
 import ContactRoutes from './routes/contact.route.js'
 import cors from 'cors'
 
-
-
 const app = express();
 
 app.use(

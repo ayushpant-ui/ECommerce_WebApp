@@ -19,6 +19,7 @@ import {
 
 import { registerUser } from "../services/auth.services";
 
+
 export default function RegisterForm() {
   const {
     register,

@@ -37,7 +37,7 @@ const Navbar = () => {
           href="/"
           className="text-2xl font-bold tracking-wide hover:font-bold hover:-translate-y-0.5 hover:transition-all"
         >
-          AyushCart 
+          Savers
         </Link>
 
         {/* Desktop Menu */}

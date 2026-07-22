@@ -8,8 +8,8 @@ export async function createUser (user: CreateUserDTO){
     `;
 
     const [result] = await pool.execute(sql, [
-        user.firstname,
-        user.lastname,
+        user.firstName,
+        user.lastName,
         user.email,
         user.password,
         user.phone

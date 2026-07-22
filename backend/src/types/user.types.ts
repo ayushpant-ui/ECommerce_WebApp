@@ -1,6 +1,6 @@
 export interface CreateUserDTO {
-    firstname : string;
-    lastname : string ;
+    firstName : string;
+    lastName : string ;
     email : string ;
     password : string ;
     phone : string ;
@@ -8,8 +8,8 @@ export interface CreateUserDTO {
 
 export interface User {
     id : number ;
-    firstname : string ;
-    lastname : string ;
+    firstName : string ;
+    lastName : string ;
     email : string ;
     password : string;
     phone : string ;
